@@ -1,3 +1,31 @@
+## Unit Project #2: Feedr
+
+This project is to build a personalized feed reader, built by Sam.
+
+### What does my feedr do?
+
+1. It fetches feeds from Reddit and Mashable
+2. Loading state/animation is shown during the fetching stage, an error will be alerted if fetching fails.
+3. News/Articles from both feeds will show on the home page, a default image will be used if there is no image provided by the feeds
+4. A pop up will show with more details and a link to the original site when user clicks on the title of each article
+5. Pop up box will be closed when user clicks on the close button, and user will go back to the page they were on before.
+6. Clicking on the "Feedr" logo or on the main menu tab, page will display the home feed.
+7. Clicking on "Mashable" menu, page will display Mashable feed only
+8. Clicking on "Reddit" menu, page will display Reddit feed only
+9. Initial functions have been done on the search box, typing in a word in search box (which matches the titles' string), when user clicks on the search button, the page will display the matched articles only.
+
+### What approach has been taken?
+
+1. I did multiple searches. I started with structuring the page in JS first, then start to fetch data from the feeds
+2. As soon as data is fetched, decisions need to be made on how to store the data, how to fit it into the DOM
+3. I had pseudocode in mind
+3. Testing small pieces of functionality frequently as suggested by Jess
+4. "Google is your friend" when my code was not working
+6. Kept trying until it worked, it feels like I have been knocking on the walls during the process, but the walls will collapse when you just keep trying.
+7. Loads of learning.
+
+### Instructions from Jess below, thanks;)
+------------------------------------------------------------
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Unit Project #2: Feedr
 
 For our Unit 2 project we will build __Feedr__, a personalized feed reader. Our
