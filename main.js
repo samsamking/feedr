@@ -21,6 +21,7 @@
 			
 		],
 		articleItems:[],
+		findResult:false
 	}
 
 	/*fetch data from reddit*/
@@ -83,6 +84,7 @@
 		alert('Error!',err);
 	});
 
+	/*calling header*/
 	renderHeader(state, header)
 	
 	/*render each header item*/	
@@ -117,7 +119,7 @@
 		`
 	}
 	
-	/*homePage each section content*/
+	/*homePage render each article content*/
 	function renderArticleItem(articleItem){
 		return `
 			 <section class="featured-image">
@@ -134,7 +136,7 @@
 		`
 	}
 	
-	/*homePage content container*/
+	/*homePage render content container*/
 	function renderArticleList(state, into){
 		into.innerHTML = `
 			<section id="main" class="wrapper">
@@ -145,8 +147,16 @@
 			
 		`
 	}
+
+	/*loading - initial fetching stage*/
+	function renderLoading(state, into){
+		into.innerHTML = `
+			<div id="pop-up" class="loader">
+			</div>
+		`
+	}
 	
-	/*render popup*/
+	/*render pop up*/
 	function renderPopup(state, into){
 		into.innerHTML += `
 			<div id="pop-up">
@@ -164,7 +174,7 @@
 		`
 	}	
 	
-	/*render each popup item*/
+	/*render each pop up item*/
 	function renderPopupItem(articleItem){
 		return `
 			<h1>${articleItem.title}</h1>
@@ -173,7 +183,7 @@
 		`
 	}	
 		
-	/*click function on each article*/
+	/*click function on each article title*/
 	delegate("body","click","h3.clickTitle",(event)=>{
 		event.preventDefault();
 		state.articleItems.map((articleItem)=>{
@@ -193,15 +203,7 @@
 		popupId.parentNode.removeChild(popupId);
 	})	
 	
-	/*loading - initial fetching stage*/
-	function renderLoading(state, into){
-		into.innerHTML = `
-			<div id="pop-up" class="loader">
-			</div>
-		`
-	}
-	
-	/*click function on each menu*/
+	/*click function on each menu item*/
 	delegate("header","click",".clickMe",(event)=>{
 		event.preventDefault();
 		function renderClickedContainer(state, into){
@@ -218,7 +220,7 @@
 	renderClickedContainer(state, container) 
 	})
 	
-	/*click on each menu function*/
+	/*click function on the main menu*/
 	delegate("header","click",".home",(event)=>{
 		event.preventDefault();
 		renderArticleList(state, container) 
@@ -234,8 +236,13 @@
 			if(articleItem.searchResult){
 			 	articleItem.searchResult=false;
 			}
+			
 			if(articleTitle.indexOf(searchValue)>-1){
 				articleItem.searchResult=true;
+			}
+			if(articleTitle.indexOf(searchValue)>-1){
+				state.findResult=true;
+				return;
 			}
 		})
 		
@@ -251,8 +258,42 @@
 				</section>
 			`
 		}
-		renderSearchedContainer(state, container) 
+
+		/*render error content when no result is found*/
+		function renderNoneResultContainer(state, into){
+			into.innerHTML = `
+				<section id="main" class="wrapper">
+							<article class="article">Hmm I can't find what you are looking for. Do you want to talk about it?</article>
+					
+				</section>
+			`
+		}
+
+		/*render search result container*/
+		if(state.findResult){
+			renderSearchedContainer(state, container) 
+			state.findResult = false
+		}else{
+			renderNoneResultContainer(state, container)
+		}
+		
 	})
-	
+
+	/*trigger a click function when enter/return key is pressed*/
+	document.getElementById("searchArea").addEventListener("keyup", function(event) {
+	    event.preventDefault();
+	    if (event.keyCode == 13) {
+	    	var searchButton=document.querySelector("#search-icon");
+	    	searchButton.click();
+	    }
+	});
+
+	/*set search box to nothing on click*/
+	delegate("header","click","#searchArea",(event)=>{
+		var seachAreaId=document.querySelector("#searchArea");
+		if (seachAreaId.value !==''){
+			seachAreaId.value = ''
+		}
+	})
 	
 })()
