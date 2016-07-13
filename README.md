@@ -5,24 +5,25 @@ This project is to build a personalized feed reader, built by Sam.
 ### What does my feedr do?
 
 1. It fetches feeds from Reddit and Mashable
-2. Loading state/animation is shown during the loading stage, an error will be alerted if fetching/loading fails.
-3. News/Articles from both feeds will show on the homepage, a default image will be used if there is no image provided by the feeds
-4. when user clicks on the title of each article, a pop up will be shown with more details on that article and a link to the original site
-5. The pop up box can be closed by user clicking on the close X button, and user will go back to the page they were on before.
-6. Clicking on the "Feedr" logo or the main menu tab "News Source Home", page will display the homepage/default feed.
+2. Loading state (an animation) is shown during the loading stage, an error will be alerted if fetching/loading fails.
+3. News/Articles from both feeds will be shown on the homepage, a default image will be used if there is no image provided by the feeds
+4. When user clicks on the title of each article, a pop up will be shown with more details on that article and a link to the original site
+5. The pop up box can be closed by user clicking on the close X button, and user will go back to the page they were on before
+6. Clicking on the "Feedr" logo or the main menu tab "News Source Home", page will display the homepage/default feed
 7. Clicking on "Mashable" in the menu, page will display Mashable articles only
 8. Clicking on "Reddit" in the menu, page will display Reddit articles only
-9. Search box function, typing in a word in search box (which will try to match the word in the titles), when user clicks on the search button or press enter key, the page will display the matched articles only.
-10. When no match is found, an error message will display instead of the articles on the page. When user clicks on the search box, it will clear all the text in it
+9. Search box function, typing a word in search box which will try to match the same word in any titles
+10. When user clicks on the search button or press enter key, the page will display the matched articles only. When no match is found, an error message will display
+11.When user clicks in the search box, it will clear all the text in it
 
 ### What approach has been taken?
 
-1. I did multiple searches. I started with structuring the DOM in JS first, then start to fetch data from the feeds
-2. As soon as data is fetched, decision was made on how to store the data, how to fit it into the DOM
+1. I did multiple searches. I started with structuring the DOM in JS first, then started to fetch data from the feeds
+2. As soon as data is fetched, it was a matter of how to store the data, how to fit it into the DOM
 3. Writing down pseudocode is helpful
 3. Testing small pieces of functionality frequently as suggested by Jess
 4. "Google is your friend" when my code was not working
-6. Kept trying until it worked, it felt like I was knocking on the wall sometimes, but the wall collapsed when I just kept trying
+6. Kept trying till it worked, it felt like I was knocking on the wall sometimes, but the wall collapsed when I just kept trying
 7. Loads of learning
 
 ### Instructions from Jess below, thanks;)

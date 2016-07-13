@@ -31,10 +31,10 @@
 			return response.json()
 		}).then((result) => {
 			result.data.children.forEach((item) => {
-			if (item.data.thumbnail =="" || item.data.thumbnail =="default" || item.data.thumbnail =="self" ){
-				item.data.thumbnail="images/article_placeholder_1.jpg"
+			if (item.data.thumbnail == "" || item.data.thumbnail == "default" || item.data.thumbnail == "self" ){
+				item.data.thumbnail = "images/article_placeholder_1.jpg"
 			}
-			var resultData={
+			var resultData = {
 				imageUrl: item.data.thumbnail,
 				url: item.data.url,
 				title: item.data.title,
@@ -61,10 +61,10 @@
 			return response.json()
 		}).then((result) => {
 			result.new.forEach((item) => {
-			if (item.image =="" || item.image =="default" || item.image =="self" ){
-				item.image="images/article_placeholder_1.jpg"
+			if (item.image == "" || item.image == "default" || item.image == "self" ){
+				item.image = "images/article_placeholder_1.jpg"
 			}
-			var resultData={
+			var resultData = {
 				imageUrl: item.image,
 				url: item.link,
 				title: item.display_title,
@@ -107,7 +107,7 @@
 				<ul>
 				  <li><a href="#" class="home">News Source Home</span></a>
 				  <ul>
-					${state.headerItems.map((headerItem)=>{
+					${state.headerItems.map((headerItem) => {
 						return `<li>${renderHeaderItem(headerItem)}</li>`
 					}).join('')}
 				  </ul>
@@ -140,7 +140,7 @@
 	function renderArticleList(state, into){
 		into.innerHTML = `
 			<section id="main" class="wrapper">
-			  ${state.articleItems.map((articleItem)=>{
+			  ${state.articleItems.map((articleItem) => {
 					return `<article class="article">${renderArticleItem(articleItem)}</article>`
 			  }).join('')}
 			</section>
@@ -161,7 +161,7 @@
 		into.innerHTML += `
 			<div id="pop-up">
 			<a href="#" class="close-pop-up">X</a>
-			${state.articleItems.map((articleItem)=>{
+			${state.articleItems.map((articleItem) => {
 				if (articleItem.feedPopup){
 				return `
 					<div class="wrapper">
@@ -184,9 +184,9 @@
 	}	
 		
 	/*click function on each article title*/
-	delegate("body","click","h3.clickTitle",(event)=>{
+	delegate("body","click","h3.clickTitle",(event) => {
 		event.preventDefault();
-		state.articleItems.map((articleItem)=>{
+		state.articleItems.map((articleItem) => {
 			if(articleItem.feedPopup){
 				articleItem.feedPopup=false;
 			}
@@ -198,18 +198,18 @@
 	});
 	
 	/*close pop up*/
-	delegate("body","click",".close-pop-up",(event)=>{
+	delegate("body","click",".close-pop-up",(event) => {
 		var popupId=document.querySelector("#pop-up")
 		popupId.parentNode.removeChild(popupId);
 	})	
 	
 	/*click function on each menu item*/
-	delegate("header","click",".clickMe",(event)=>{
+	delegate("header","click",".clickMe",(event) => {
 		event.preventDefault();
 		function renderClickedContainer(state, into){
 			into.innerHTML = `
 				<section id="main" class="wrapper">
-				${state.articleItems.map((articleItem)=>{
+				${state.articleItems.map((articleItem) => {
 					if (event.target.getAttribute('data-label').toLowerCase()==articleItem.label.toLowerCase()){
 						return `<article class="article">${renderArticleItem(articleItem)}</article>`
 					}
@@ -221,13 +221,13 @@
 	})
 	
 	/*click function on the main menu*/
-	delegate("header","click",".home",(event)=>{
+	delegate("header","click",".home",(event) => {
 		event.preventDefault();
 		renderArticleList(state, container) 
 	})
 	
 	/*search button - search for the word*/
-	delegate("header","click","#search-icon",(event)=>{
+	delegate("header","click","#search-icon",(event) => {
 		event.preventDefault();
 		var seachAreaId=document.querySelector("#searchArea");
 		var searchValue=seachAreaId.value.toLowerCase();
@@ -250,7 +250,7 @@
 		function renderSearchedContainer(state, into){
 			into.innerHTML = `
 				<section id="main" class="wrapper">
-				  ${state.articleItems.map((articleItem)=>{
+				  ${state.articleItems.map((articleItem) => {
 						if (articleItem.searchResult){
 							return `<article class="article">${renderArticleItem(articleItem)}</article>`
 						}
@@ -289,7 +289,7 @@
 	});
 
 	/*set search box to nothing on click*/
-	delegate("header","click","#searchArea",(event)=>{
+	delegate("header","click","#searchArea",(event) => {
 		var seachAreaId=document.querySelector("#searchArea");
 		if (seachAreaId.value !==''){
 			seachAreaId.value = ''
