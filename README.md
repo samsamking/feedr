@@ -14,7 +14,7 @@ This project is to build a personalized feed reader, built by Sam.
 8. Clicking on "Reddit" in the menu, page will display Reddit articles only
 9. Search box function, typing a word in search box which will try to match the same word in any titles
 10. When user clicks on the search button or press enter key, the page will display the matched articles only. When no match is found, an error message will display
-11.When user clicks in the search box, it will clear all the text in it
+11. When user clicks in the search box, it will clear all the text in it
 
 ### What approach has been taken?
 
