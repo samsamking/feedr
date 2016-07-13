@@ -217,7 +217,7 @@
 				</section>
 			`
 	}
-	renderClickedContainer(state, container) 
+		renderClickedContainer(state, container) 
 	})
 	
 	/*click function on the main menu*/
@@ -280,7 +280,7 @@
 	})
 
 	/*trigger a click function when enter/return key is pressed*/
-	document.getElementById("searchArea").addEventListener("keyup", function(event) {
+	document.getElementById("searchArea").addEventListener("keyup", (event) => {
 	    event.preventDefault();
 	    if (event.keyCode == 13) {
 	    	var searchButton=document.querySelector("#search-icon");
