@@ -292,7 +292,8 @@
 	delegate("header","click","#searchArea",(event) => {
 		var seachAreaId=document.querySelector("#searchArea");
 		if (seachAreaId.value !==''){
-			seachAreaId.value = ''
+			seachAreaId.value = '';
+			//renderArticleList(state, container)
 		}
 	})
 	
