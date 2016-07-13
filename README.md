@@ -10,11 +10,10 @@ This project is to build a personalized feed reader, built by Sam.
 4. When user clicks on the title of each article, a pop up will be shown with more details on that article and a link to the original site
 5. The pop up box can be closed by user clicking on the close X button, and user will go back to the page they were on before
 6. Clicking on the "Feedr" logo or the main menu tab "News Source Home", page will display the homepage/default feed
-7. Clicking on "Mashable" in the menu, page will display Mashable articles only
-8. Clicking on "Reddit" in the menu, page will display Reddit articles only
-9. Search box function, typing a word in search box which will try to match the same word in any titles
-10. When user clicks on the search button or press enter key, the page will display the matched articles only. When no match is found, an error message will display
-11. When user clicks in the search box, it will clear all the text in it
+7. Clicking on "Mashable" in the menu, page will display Mashable articles only. Clicking on "Reddit" in the menu, page will display Reddit articles only
+8. Search box function, typing a word in search box which will try to match the same word in any titles
+9. When user clicks on the search button or press enter key, the page will display the matched articles only. When no match is found, an error message will display
+10. When user clicks in the search box, it will clear all the text in it
 
 ### What approach has been taken?
 
